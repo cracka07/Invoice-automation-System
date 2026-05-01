@@ -14,7 +14,7 @@ Dim InvoiceNumber As String
 
 InvoiceNumber = Sheets("FindInvoice").Range("N1").Value
 Subjects = "Invoice #" & InvoiceNumber
-RecipientEmail = "marianook_f@hotmail.com"
+RecipientEmail = "Recipient Email"
 EmailBody = "Please find attached your invoice " & InvoiceNumber
 
 Set OutlookApp = New Outlook.Application
@@ -25,7 +25,7 @@ With MailItem
     .Subject = Subjects
     .Body = EmailBody
     .Attachments.Add InvoiceNumber
-    .SentOnBehalfOfName = "marianofferrer@gmail.com"
+    .SentOnBehalfOfName = "Email_other_account"
 '    .SendUsingAccount = OutlookApp.Session.Accounts.Item(1)
 '    .Display
     .Send
